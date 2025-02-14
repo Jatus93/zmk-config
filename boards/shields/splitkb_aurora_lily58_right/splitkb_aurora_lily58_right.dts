@@ -1,0 +1,8 @@
+&i2c1 {
+    status = "okay";
+    trackball: trackball@0x0a {
+        compatible = "pimoroni,trackball";
+        reg = <0x0a>;
+        zmk,split-role = "peripheral";  // Marks this as sending input
+    };
+};
