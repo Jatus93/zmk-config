@@ -27,11 +27,9 @@ include:
     shield: splitkb_aurora_lily58_right
   - board: nice_nano//zmk
     shield: lily58_left
-    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
   - board: nice_nano//zmk
     shield: lily58_right
   - board: nice_nano//zmk
-    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
     shield: settings_reset
   - board: nice_nano//zmk
     shield: lily58_dongle
