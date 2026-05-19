@@ -11,7 +11,7 @@ manifest:
       import: app/west.yml
     - name: zmk-config
       remote: jatus93
-      revision: lily58-wip
+      revision: master
       path: zmk-config-module
   self:
     path: config
