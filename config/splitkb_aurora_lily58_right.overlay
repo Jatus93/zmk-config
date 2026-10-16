@@ -16,11 +16,13 @@
         /*
          * Polling mode (no extra wiring). For interrupt mode, which is better for
          * battery and lets the ball wake the half from deep sleep, wire the PIM447
-         * INT pad to the free D0 pin (P0.08) and uncomment the line below.
-         * D1 (P0.06) is taken by the Aurora RGB underglow.
+         * INT pad to the "A" pad of any unused right-half encoder footprint
+         * (ENC1_A, pro_micro 18), then uncomment the line below together with the
+         * `&right_encoder` block at the end of this file.
+         * Avoid D0/D1: D0 is the TRRS DATA line, D1 drives the RGB underglow.
          */
         poll-interval-ms = <15>;
-        /* int-gpios = <&pro_micro 0 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; */
+        /* int-gpios = <&pro_micro 18 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; */
 
         /* Adjust to match how the breakout is mounted. */
         /* swap-xy; */
@@ -32,3 +34,10 @@
 &trackball_split {
     device = <&pim447>;
 };
+
+/* Uncomment when INT uses the encoder pin, so the encoder never claims it. */
+/*
+&right_encoder {
+    status = "disabled";
+};
+*/
