@@ -2,10 +2,15 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
+    - name: michaelcoquet
+      url-base: https://github.com/michaelcoquet
   projects:
     - name: zmk
       remote: zmkfirmware
       revision: main
       import: app/west.yml
+    - name: zmk-driver-pim447
+      remote: michaelcoquet
+      revision: 9713fb6b1b88f332a725040f2ab0a7a4993dee86
   self:
     path: config

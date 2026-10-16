@@ -1,0 +1,9 @@
+/*
+ * Left (central) half: receives trackball events from the right half.
+ */
+
+#include "splitkb_aurora_lily58_trackball.dtsi"
+
+&trackball_listener {
+    status = "okay";
+};

@@ -1,0 +1,34 @@
+/*
+ * Right (peripheral) half: Pimoroni PIM447 trackball on the OLED header I2C bus
+ * (SDA = D2 / P0.17, SCL = D3 / P0.20), default address 0x0A.
+ */
+
+#include "splitkb_aurora_lily58_trackball.dtsi"
+
+&pro_micro_i2c {
+    status = "okay";
+
+    pim447: trackball@a {
+        compatible = "pimoroni,pim447";
+        reg = <0xa>;
+        status = "okay";
+
+        /*
+         * Polling mode (no extra wiring). For interrupt mode, which is better for
+         * battery and lets the ball wake the half from deep sleep, wire the PIM447
+         * INT pad to the free D0 pin (P0.08) and uncomment the line below.
+         * D1 (P0.06) is taken by the Aurora RGB underglow.
+         */
+        poll-interval-ms = <15>;
+        /* int-gpios = <&pro_micro 0 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; */
+
+        /* Adjust to match how the breakout is mounted. */
+        /* swap-xy; */
+        /* invert-x; */
+        /* invert-y; */
+    };
+};
+
+&trackball_split {
+    device = <&pim447>;
+};
