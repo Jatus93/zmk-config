@@ -24,8 +24,11 @@
         poll-interval-ms = <15>;
         /* int-gpios = <&pro_micro 18 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; */
 
+        /* Pointer speed in 1/16ths: 16 = 1x, 48 = 3x. */
+        base-scale = <48>;
+
         /* Adjust to match how the breakout is mounted. */
-        /* swap-xy; */
+        swap-xy;
         /* invert-x; */
         /* invert-y; */
     };
