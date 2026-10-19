@@ -25,6 +25,12 @@ include:
     cmake-args: -DCONFIG_ZMK_STUDIO=y
   - board: nice_nano//zmk
     shield: splitkb_aurora_lily58_right
+  # Diagnostic build: same right half, with USB serial logging and PIM447 debug logs
+  - board: nice_nano//zmk
+    shield: splitkb_aurora_lily58_right
+    snippet: zmk-usb-logging
+    cmake-args: -DCONFIG_PIM447_LOG_LEVEL_DBG=y
+    artifact-name: splitkb_aurora_lily58_right_logging
   - board: nice_nano//zmk
     shield: lily58_left
     cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
