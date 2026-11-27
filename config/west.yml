@@ -4,6 +4,8 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: michaelcoquet
       url-base: https://github.com/michaelcoquet
+    - name: jatus93
+      url-base: https://github.com/Jatus93
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -12,5 +14,8 @@ manifest:
     - name: zmk-driver-pim447
       remote: michaelcoquet
       revision: 9713fb6b1b88f332a725040f2ab0a7a4993dee86
+    - name: zmk-battery-bridge
+      remote: jatus93
+      revision: v0.1.0
   self:
     path: config

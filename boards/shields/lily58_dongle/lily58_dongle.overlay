@@ -31,3 +31,16 @@
         >;
     };
 };
+
+/* Battery bridge: a second USB CDC ACM port (Studio keeps its own). */
+/ {
+    chosen {
+        zmk,battery-bridge-uart = &battery_bridge_uart;
+    };
+};
+
+&zephyr_udc0 {
+    battery_bridge_uart: battery_bridge_uart {
+        compatible = "zephyr,cdc-acm-uart";
+    };
+};
