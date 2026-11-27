@@ -16,6 +16,6 @@ manifest:
       revision: 9713fb6b1b88f332a725040f2ab0a7a4993dee86
     - name: zmk-battery-bridge
       remote: jatus93
-      revision: feat/battery-bridge
+      revision: v0.1.0
   self:
     path: config
